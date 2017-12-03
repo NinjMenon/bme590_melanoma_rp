@@ -6,11 +6,19 @@ Created on Sun Dec  3 13:00:36 2017
 """
 
 import base64
+import requests
+import glob
 
-image = open(r'C:\Users\Niranjana\Documents\Independent Study\Data\CC1_image.jpg', 'rb')
-image_read = image.read()
-image_64_encode = base64.encodebytes(image_read)
-
-image_64_decode = base64.decodebytes(image_64_encode) 
-image_result = open('decoded_image.jpg', 'wb') # create a writable image and write the decoding result
-image_result.write(image_64_decode)
+filetypes = ['.jpg', '.tif', '.png', '.gif','.jpx','.pcd'] # accepted file types 
+# For Raspberry Pi, change the folder below to media/usb
+c = 0 
+payload = {}
+for image in glob.glob("folder/*."):
+    if image.endswith(t for t in filetypes):
+        with open(image) as im:
+            im_read = im.read()
+            im_encode = base64.encodebytes(im_read)
+            key = 'image' + str(c)
+            payload[key] = im_encode
+            
+r = requests.post('http://http.org/post', data=payload) # placeholder 
