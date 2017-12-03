@@ -9,10 +9,10 @@ import base64
 import requests
 import glob
 
-filetypes = ['.jpg', '.tif', '.png', '.gif','.jpx','.pcd'] # accepted file types 
-# For Raspberry Pi, change the folder below to media/usb
+filetypes = ['.jpg', '.tif', '.png', '.gif','.jpx','.pcd']
 c = 0 
 payload = {}
+# For Raspberry Pi, change the folder below to media/usb
 for image in glob.glob("folder/*."):
     if image.endswith(t for t in filetypes):
         with open(image) as im:
