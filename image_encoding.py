@@ -3,6 +3,7 @@
 Created on Sun Dec  3 13:00:36 2017
 
 @author: Niranjana
+
 """
 
 import base64
@@ -25,5 +26,6 @@ for image in image_list:
         key = 'image' + str(c)
         payload[key] = im_encode
         c = c+1
-        
-#r = requests.post('http://http.org/post', data=payload) # placeholder 
+
+# if payload:
+    # r = requests.post('http://http.org/post', json=payload) 
