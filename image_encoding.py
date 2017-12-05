@@ -7,17 +7,17 @@ Created on Sun Dec  3 13:00:36 2017
 """
 
 import base64
-#import requests
+import requests
 import glob
-import os
+#import os
 
 filetypes = ('*.jpg', '*.tif', '*.png', '*.gif','*.jpx','*.pcd')
 c = 0 
 payload = {}
 image_list = []
-usb_dir = os.listdir('/media/pi/')[0]
+#usb_dir = os.listdir(r'C:\Users\Niranjana\Documents\Independent Study\Data')[0]
 for files in filetypes:
-    image_list.extend(glob.glob('/media/pi/{}/{}'.format(usb_dir,files)))
+    image_list.extend(glob.glob(r'C:\Users\Niranjana\Documents\Independent Study\Data\Curve fitting\{}'.format(files)))
 
 for image in image_list:
     with open(image, 'rb') as im:
@@ -27,5 +27,5 @@ for image in image_list:
         payload[key] = im_encode
         c = c+1
 
-# if payload:
-    # r = requests.post('http://http.org/post', json=payload) 
+if payload:
+    r = requests.post('http://vcm-1854.vm.duke.edu:5000/image_classified_result', data=payload) 
