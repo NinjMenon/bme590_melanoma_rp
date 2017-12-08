@@ -26,10 +26,9 @@ if usb_dir:
 
     for image in image_list:
         with open(image, 'rb') as im:
-            im_read = im.read()
-            im_encode = base64.encodebytes(im_read)
+            image_string = base64.b64encode(im.read())
             key = 'image' + str(c)
-            payload[key] = im_encode
+            payload[key] = image_string
             c = c+1
 
     if payload:
