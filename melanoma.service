@@ -1,0 +1,14 @@
+[Unit]:
+Description=My service
+After=network.target
+
+[Service]
+ExecStart=/home/pi/bme590_melanoma_rp -u image_encoding.py
+WorkingDirectory=/home/pi/bme590_melanoma_rp
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
