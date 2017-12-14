@@ -3,7 +3,7 @@ Description=Image Encoding
 After=network.target
 
 [Service]
-ExecStart=/home/pi/bme590_melanoma_rp -u image_encoding.py
+ExecStart=/usr/bin/python3 -u main.py
 WorkingDirectory=/home/pi/bme590_melanoma_rp
 StandardOutput=inherit
 StandardError=inherit
