@@ -1,22 +1,16 @@
 # bme590_melanoma_rp
 Duke BME590 Final Project : Classifying Melanomas (Raspberry Pi section) 
 
-The Melanoma project aims to develop a system that takes in images of skin lesions as inputs, and outputs the likelihood that the lesion is malignant, in order to facilitate early diagnosis of melanoma. We use a Raspberry Pi to access images via USB. The images then is sent to the web service to undergo a trained classifier function which compute the likelihood that the lesion is malignant and return this percentage to the user. The image/patient ID and the prediction results are also stored in a database which can be accessed later.
+The Melanoma classification project consists of a system computes the likelihood that a lesion is malignant by analyzing skin images, in order to facilitate early diagnosis of melanoma. A Raspberry Pi accesses images stored on a USB and sends them to a cloud-base web service that hosts a trained classifier. The results of the classification can then be accessed by visiting a web page. 
 
-Running method
-===============
-The Raspberry Pi section will start run when user plugs in the usb with images inside.
+This repository contains front-end Python scripts to read images from a USB drive, encode them as base64 strings and post this data to a web server. 
+
 More information about the project can be accessed on our backend end repo: https://github.com/injelee/melanoma_backend
 
 License
 ==============
 We choose to use Apache License, Version 2.0 for our project's license. Because this license provides an express grant of patent rights
 from contributors to users.
-
-Documentation
-==============
-The latest documentation is automatically generated using Sphinx and can be found through the link below:
-
 
 
 Contributors
