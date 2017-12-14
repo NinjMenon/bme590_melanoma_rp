@@ -32,4 +32,4 @@ if usb_dir:
             c = c+1
 
     if payload:
-        r = requests.post('http://vcm-2117.vm.duke.edu:5000/patient_classification', json=payload)
+        r = requests.post('http://vcm-2117.vm.duke.edu:8000/patient_classification', json=payload)
