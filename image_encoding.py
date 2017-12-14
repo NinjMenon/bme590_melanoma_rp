@@ -32,7 +32,4 @@ if usb_dir:
             c = c+1
 
     if payload:
-        r = requests.post('http://vcm-1854.vm.duke.edu:5000/patient_classification', json=payload)
-    else:
-        text = {'error' : 'No images were found'}
-        r = requests.post('http://vcm-1854.vm.duke.edu:5000/patient_classification', json = text)
+        r = requests.post('http://vcm-2117.vm.duke.edu:5000/patient_classification', json=payload)
